@@ -1,3 +1,15 @@
-# Quasar App
+# Quasar SerialPort Test
 
-> WIP
+## History
+```bash
+git clone git@github.com:s-light/quasar_serialport_test.git
+quasar create quasar_serialport_test
+cd quasar_serialport_test/
+```
+
+### prepare needed packages
+```bash
+yarn add webpack --dev
+yarn add electron-rebuild --dev
+yarn add serialport
+```
