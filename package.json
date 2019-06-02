@@ -7,6 +7,7 @@
   "author": "Stefan Krüger (s-light git@s-light.eu)",
   "private": true,
   "scripts": {
+    "install": "electron-rebuild",
     "lint": "eslint --ext .js,.vue src",
     "test": "echo \"No test specified\" && exit 0"
   },
@@ -19,6 +20,10 @@
     "@quasar/app": "^1.0.0-beta.0",
     "@vue/eslint-config-standard": "^4.0.0",
     "babel-eslint": "^10.0.1",
+    "devtron": "^1.4.0",
+    "electron": "^4.0.5",
+    "electron-debug": "^2.1.0",
+    "electron-devtools-installer": "^2.2.4",
     "electron-rebuild": "^1.8.5",
     "eslint": "^5.10.0",
     "eslint-loader": "^2.1.1",

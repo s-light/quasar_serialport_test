@@ -12,4 +12,7 @@ cd quasar_serialport_test/
 yarn add webpack --dev
 yarn add electron-rebuild --dev
 yarn add serialport
+quasar dev --mode electron
+yarn
+# this triggers the rebuild
 ```
