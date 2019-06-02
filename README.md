@@ -15,4 +15,5 @@ yarn add serialport
 quasar dev --mode electron
 yarn
 # this triggers the rebuild
+quasar ext add @quasar/icon-factory
 ```

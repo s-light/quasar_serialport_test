@@ -1,101 +1,96 @@
 <template>
-  <q-layout view="lHh Lpr lFf">
-    <q-header elevated>
-      <q-toolbar>
-        <q-btn
-          flat
-          dense
-          round
-          @click="leftDrawerOpen = !leftDrawerOpen"
-          aria-label="Menu"
+    <q-layout view="lHh Lpr lFf">
+        <q-header elevated>
+            <q-toolbar>
+                <q-btn
+                    flat
+                    dense
+                    round
+                    @click="leftDrawerOpen = !leftDrawerOpen"
+                    aria-label="Menu"
+                >
+                    <q-icon name="menu" />
+                </q-btn>
+
+                <q-toolbar-title>
+                    Hello World :-)
+                </q-toolbar-title>
+
+                <div>
+                    Quasar v{{ $q.version }}
+                </div>
+                <div>
+                    <!-- https://quasar.dev/options/platform-detection -->
+                    &nbsp;
+                    {{ $q.platform.is.platform }}
+                    &nbsp;
+                    {{ $q.platform.is.desktop ? 'desktop' : '' }}
+                    {{ $q.platform.is.mobile ? 'mobile' : '' }}
+                </div>
+            </q-toolbar>
+        </q-header>
+
+        <q-drawer
+            v-model="leftDrawerOpen"
+            bordered
+            content-class="bg-grey-2"
         >
-          <q-icon name="menu" />
-        </q-btn>
+            <q-list>
+                <q-item
+                    header
+                    clickable
+                    v-ripple
+                    to="welcome"
+                    exact
+                >
+                    <img
+                        alt="App-Logo"
+                        src="~assets/logo_test3_splashscreen.svg"
+                        style="max-width: 100%;"
+                    >
+                </q-item>
+                <q-item
+                    clickable
+                    v-ripple
+                    to="serial_minimal"
+                    exact
+                >
+                    <q-item-section avatar>
+                        <q-icon name="developer_board" />
+                    </q-item-section>
+                    <q-item-section>
+                        <q-item-label>
+                            Serial Tests Minimal
+                        </q-item-label>
+                        <q-item-label caption>
+                            serial connection tests
+                        </q-item-label>
+                    </q-item-section>
+                </q-item>
+            </q-list>
+        </q-drawer>
 
-        <q-toolbar-title>
-          Quasar App
-        </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
-      </q-toolbar>
-    </q-header>
-
-    <q-drawer
-      v-model="leftDrawerOpen"
-      bordered
-      content-class="bg-grey-2"
-    >
-      <q-list>
-        <q-item-label header>Essential Links</q-item-label>
-        <q-item clickable tag="a" target="_blank" href="https://quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="school" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Docs</q-item-label>
-            <q-item-label caption>quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://github.com/quasarframework/">
-          <q-item-section avatar>
-            <q-icon name="code" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Github</q-item-label>
-            <q-item-label caption>github.com/quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://chat.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="chat" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Discord Chat Channel</q-item-label>
-            <q-item-label caption>chat.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://forum.quasar.dev">
-          <q-item-section avatar>
-            <q-icon name="record_voice_over" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Forum</q-item-label>
-            <q-item-label caption>forum.quasar.dev</q-item-label>
-          </q-item-section>
-        </q-item>
-        <q-item clickable tag="a" target="_blank" href="https://twitter.com/quasarframework">
-          <q-item-section avatar>
-            <q-icon name="rss_feed" />
-          </q-item-section>
-          <q-item-section>
-            <q-item-label>Twitter</q-item-label>
-            <q-item-label caption>@quasarframework</q-item-label>
-          </q-item-section>
-        </q-item>
-      </q-list>
-    </q-drawer>
-
-    <q-page-container>
-      <router-view />
-    </q-page-container>
-  </q-layout>
+        <q-page-container>
+            <router-view />
+        </q-page-container>
+    </q-layout>
 </template>
 
 <script>
-import { openURL } from 'quasar'
 
 export default {
-  name: 'MyLayout',
-  data () {
-    return {
-      leftDrawerOpen: this.$q.platform.is.desktop
+    name: 'MyTests',
+    data () {
+        return {
+            leftDrawerOpen: this.$q.platform.is.desktop,
+            link: 'index'
+        }
     }
-  },
-  methods: {
-    openURL
-  }
 }
 </script>
 
-<style>
+<style lang="stylus">
+.my-menu-link
+    color white
+    background #F2C037
 </style>
