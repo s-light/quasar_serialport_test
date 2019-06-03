@@ -26,7 +26,9 @@
     <!-- http://girishjoshi.io/post/access-serialport-from-electron-application-and-creating-gui-for-micropython-repl-on-esp8266/ -->
     <div class="">
         <h4>Serial terminal</h4>
+        <input type="text" id="device" value="/dev/ttyACM0">
         <button id="btn_connect" onclick="openPort()">connect</button>
+        <br>
         <textarea rows="10" cols="50" id="incomingData"></textarea>
         <br>
         <textarea rows="1" cols="50" id="inputText"></textarea>
@@ -40,8 +42,9 @@ const Readline = serialPort.parsers.Readline;
 var sp = undefined;
 
 function openPort() {
+    const device_name = document.getElementById('device').value;
     //initialize serialport with 115200 baudrate.
-    sp = new serialPort('/dev/ttyACM0', {
+    sp = new serialPort(device_name, {
         baudRate: 115200,
     });
     //parse incoming data line-by-line from serial port.
