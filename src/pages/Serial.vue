@@ -80,42 +80,38 @@ export default {
     },
     methods: {
         listPorts () {
-            console.log('listPorts')
-
-            try {
-                SerialPort.list().then(
-                    ports => {
-                        console.log('ports', ports)
-                        this.deviceList = []
-                        this.deviceList.push(...ports)
-                    },
-                    err => {
-                        console.error('serialport.list:', err)
-                    }
-                )
-            } catch (e) {
-                console.error('SerialPort.list() failed:\n', e)
+            console.group('listPorts()')
+            if (SerialPort) {
+                try {
+                    SerialPort.list().then(
+                        ports => {
+                            console.log('ports', ports)
+                            this.deviceList = []
+                            this.deviceList.push(...ports)
+                            // console.group('SerialPort list:')
+                            // for (let port of ports) {
+                            //     if (port.vendorId) {
+                            //         console.log(port)
+                            //     }
+                            // }
+                            // console.groupEnd()
+                        },
+                        err => {
+                            console.error('serialport.list:', err)
+                        }
+                    )
+                } catch (e) {
+                    console.error('SerialPort.list() failed:\n', e)
+                }
+            } else {
+                this.deviceList = []
+                console.log('SerialPort not available.')
             }
-
-            console.log('listPorts done.')
+            console.groupEnd()
         }
     },
     mounted: function () {
-        console.log('mounted..')
-
-        // let SerialPort
-        // try {
-        //     SerialPort = require('serialport')
-        //     this.serialAvailableInternal = true
-        // } catch (e) {
-        //     console.error('SerialPort loading failed.\n', e)
-        // }
-
-        // console.log('SerialPort', SerialPort)
-        // if (SerialPort) {
-        //     console.log('setup done.')
-        // }
-        console.log('mounted - done')
+        this.listPorts()
     }
 }
 </script>

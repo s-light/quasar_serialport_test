@@ -9,7 +9,8 @@
             this is what i have 'build' on my way to learn quasar and vue :-)<br>
             enjoy ;-)
         </p>
-        <pre>{{ process }}</pre>
+        <!-- <pre>{{ process }}</pre> -->
+        <pre>{{ $q.platform }}</pre>
         <q-btn
             v-ripple
             to="Serial"
@@ -37,8 +38,6 @@
 export default {
     name: 'PageIndex',
     mounted: function () {
-        // https://stackoverflow.com/questions/43739094/how-to-get-environment-variable-from-quasar-framework
-        // console.log('process.env', process.env)
     }
 }
 </script>
