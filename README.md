@@ -1,5 +1,17 @@
 # Quasar SerialPort Test
 
+
+
+## Usage
+```bash
+git clone https://github.com/s-light/quasar_serialport_test.git
+yarn
+quasar dev --mode electron
+```
+
+
+---
+
 ## History
 ```bash
 git clone git@github.com:s-light/quasar_serialport_test.git
@@ -11,9 +23,12 @@ cd quasar_serialport_test/
 ```bash
 yarn add webpack --dev
 yarn add electron-rebuild --dev
+quasar ext add @quasar/icon-factory
 yarn add serialport
 quasar dev --mode electron
 yarn
 # this triggers the rebuild
-quasar ext add @quasar/icon-factory
 ```
+
+### prepare content
+copied / modified files..

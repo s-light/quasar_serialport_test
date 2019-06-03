@@ -40,7 +40,7 @@
                     header
                     clickable
                     v-ripple
-                    to="welcome"
+                    to="Index"
                     exact
                 >
                     <img
@@ -52,7 +52,7 @@
                 <q-item
                     clickable
                     v-ripple
-                    to="serial_minimal"
+                    to="Serial"
                     exact
                 >
                     <q-item-section avatar>
@@ -60,10 +60,7 @@
                     </q-item-section>
                     <q-item-section>
                         <q-item-label>
-                            Serial Tests Minimal
-                        </q-item-label>
-                        <q-item-label caption>
-                            serial connection tests
+                            Serial Tests
                         </q-item-label>
                     </q-item-section>
                 </q-item>
@@ -79,11 +76,10 @@
 <script>
 
 export default {
-    name: 'MyTests',
+    name: 'MyLayout',
     data () {
         return {
-            leftDrawerOpen: this.$q.platform.is.desktop,
-            link: 'index'
+            leftDrawerOpen: this.$q.platform.is.desktop
         }
     }
 }
