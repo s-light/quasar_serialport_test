@@ -3,6 +3,14 @@
         class="flex column"
         style="align-items: center;"
     >
+        <section>
+            serialAvailableInternal: {{ serialAvailableInternal }}
+        </section>
+        <q-btn
+            v-ripple
+            label="list ports"
+            @click="listPorts()"
+        />
         <section class="q-mt-md">
             <div
                 v-for="(device, index) in deviceList"
@@ -46,33 +54,42 @@
 //     )
 // }
 
+// ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+// debug in developer console
+// sp = require('serialport')
+// sp.list().then(
+//     ports => {
+//         for (port of ports) {
+//             if (port.vendorId) {
+//                 console.log(port)
+//             }
+//         }
+//     },
+//     err => console.error('sp.list:', err)
+// )
+// sp.list().then(
+//     ports => ports.forEach(console.log),
+//     err => console.error('sp.list:', err)
+// )
+
 export default {
     name: 'SerialList',
     data () {
         return {
-            serialAvailable: false,
+            serialAvailableInternal: false,
             deviceList: [{
                 comName: 'dummyResponder'
             }]
         }
     },
-    mounted: function () {
-        console.log('mounted..')
+    methods: {
+        listPorts () {
+            console.log('listPorts')
 
-        // let SerialPort
-        // try {
-        //     SerialPort = require('serialport')
-        // } catch (e) {
-        //     console.error('SerialPort loading failed.\n', e)
-        // }
-
-        console.log('SerialPort', SerialPort)
-        if (SerialPort) {
             try {
                 SerialPort.list().then(
                     ports => {
                         console.log('ports', ports)
-                        ports.forEach(console.log)
                         this.deviceList = []
                         this.deviceList.push(...ports)
                     },
@@ -83,8 +100,25 @@ export default {
             } catch (e) {
                 console.error('SerialPort.list() failed:\n', e)
             }
-            console.log('setup done.')
+
+            console.log('listPorts done.')
         }
+    },
+    mounted: function () {
+        console.log('mounted..')
+
+        // let SerialPort
+        // try {
+        //     SerialPort = require('serialport')
+        //     this.serialAvailableInternal = true
+        // } catch (e) {
+        //     console.error('SerialPort loading failed.\n', e)
+        // }
+
+        // console.log('SerialPort', SerialPort)
+        // if (SerialPort) {
+        //     console.log('setup done.')
+        // }
         console.log('mounted - done')
     }
 }

@@ -1,10 +1,30 @@
 <template>
-    <q-page class="flex flex-center">
-        <img
-            alt="Quasar logo"
-            src="~assets/quasar-logo-full.svg"
+    <q-page
+        class="flex column"
+        style="align-items: center;"
+    >
+        <h4>Quasar SerialPort Tests</h4>
+        <p>
+            Welcome to a some tests -<br>
+            this is what i have 'build' on my way to learn quasar and vue :-)<br>
+            enjoy ;-)
+        </p>
+        <q-btn
+            v-ripple
+            to="Serial"
+            label="Serial Tests"
+        />
+        <p
+            class="q-mt-ms"
         >
-        <h1>!?Help?!</h1>
+            find the source repository at <br>
+            <a
+                target="_blank"
+                href="https://github.com/s-light/quasar_serialport_test"
+            >
+                https://github.com/s-light/quasar_serialport_test
+            </a>
+        </p>
     </q-page>
 </template>
 
