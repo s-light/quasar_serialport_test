@@ -22,8 +22,8 @@ cd quasar_serialport_test/
 ### prepare needed packages
 ```bash
 yarn add webpack --dev
-yarn add electron-rebuild --dev
 quasar ext add @quasar/icon-factory
+yarn add electron-rebuild
 yarn add serialport
 quasar dev --mode electron
 yarn

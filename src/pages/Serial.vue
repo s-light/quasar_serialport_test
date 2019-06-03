@@ -67,10 +67,6 @@
 //     },
 //     err => console.error('sp.list:', err)
 // )
-// sp.list().then(
-//     ports => ports.forEach(console.log),
-//     err => console.error('sp.list:', err)
-// )
 
 export default {
     name: 'SerialList',
