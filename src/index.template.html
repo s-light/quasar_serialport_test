@@ -15,11 +15,73 @@
     <link rel="icon" type="image/png" sizes="96x96" href="statics/icons/favicon-96x96.png">
     <link rel="icon" type="image/ico" href="statics/icons/favicon.ico">
     <script>
-        const SerialPort = require('serialport');
+        // const SerialPort = require('serialport');
     </script>
   </head>
   <body>
     <!-- DO NOT touch the following DIV -->
     <div id="q-app"></div>
+
+    <!-- based on  -->
+    <!-- http://girishjoshi.io/post/access-serialport-from-electron-application-and-creating-gui-for-micropython-repl-on-esp8266/ -->
+    <div class="">
+        <h4>Serial terminal</h4>
+        <button id="btn_connect" onclick="openPort()">connect</button>
+        <textarea rows="10" cols="50" id="incomingData"></textarea>
+        <br>
+        <textarea rows="1" cols="50" id="inputText"></textarea>
+        <br>
+        <input id="button" type="submit" name="button" value="Ctrl+c"/>
+<script>
+
+//load serialport module
+serialPort = require('serialport');
+const Readline = serialPort.parsers.Readline;
+var sp = undefined;
+
+function openPort() {
+    //initialize serialport with 115200 baudrate.
+    sp = new serialPort('/dev/ttyACM0', {
+        baudRate: 115200,
+    });
+    //parse incoming data line-by-line from serial port.
+    const parser = sp.pipe(new Readline({ delimiter: '\r\n' }));
+    parser.on('data', addText);
+}
+
+//append incoming data to the textarea.
+function addText(event) {
+    document.getElementById("incomingData").value += "\n"+event;
+}
+
+function writeonSer(data){
+    //Write the data to serial port.
+    sp.write( data, function(err) {
+        if (err) {
+            return console.log('Error on write: ', err.message);
+        }
+        console.log('message written');
+    });
+
+}
+
+document.getElementById('inputText').onkeypress = function(e){
+    if (!e) e = window.event;
+    var keyCode = e.keyCode || e.which;
+    //write the data to serial when enter key is pressed.
+    if (keyCode == '13'){
+        //console.log("enter pressed", document.getElementById("inputText").value);
+        writeonSer(document.getElementById("inputText").value+"\r\n");
+        document.getElementById('inputText').value = "";
+        return false;
+    }
+}
+
+document.getElementById('button').onclick = function(e){
+    //send ctrl+c to serialport
+    writeonSer('\x03');
+}
+</script>
+    </div>
   </body>
 </html>
