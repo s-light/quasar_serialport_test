@@ -9,22 +9,27 @@
             this is what i have 'build' on my way to learn quasar and vue :-)<br>
             enjoy ;-)
         </p>
-        <!-- <pre>{{ process }}</pre> -->
-        <pre>{{ $q.platform }}</pre>
+        <pre style="font-size:0.8em;">{{ $q.platform }}</pre>
         <q-btn
             v-ripple
             to="Serial"
             label="Serial Tests"
         />
-        <p
-            class="q-mt-ms"
-        >
+        <p class="q-mt-ms">
             find the source repository at <br>
             <a
                 target="_blank"
                 href="https://github.com/s-light/quasar_serialport_test"
             >
                 https://github.com/s-light/quasar_serialport_test
+            </a>
+            <br>
+            and more information at <br>
+            <a
+                target="_blank"
+                href="https://github.com/s-light/quasar_test/issues/7"
+            >
+                quasar_test: experiment with serial access #7
             </a>
         </p>
     </q-page>

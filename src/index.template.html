@@ -16,41 +16,7 @@
     <link rel="icon" type="image/ico" href="statics/icons/favicon.ico">
 </head>
 <body>
-    <!-- <script src="load_native_modules.js" charset="utf-8" type="text/javascript"></script> -->
-    <!-- ^ does not work in build -- file not found.. -->
-    <script type="text/javascript">
-        let SerialPort
-        if (process.versions.electron) {
-            console.info('Running electron → importing SerialPort')
-            try {
-                SerialPort = require('serialport')
-            } catch (e) {
-                console.error('Patch with SerialPort failed:\n', e)
-            }
-        }
-
-        if (SerialPort) {
-            try {
-                SerialPort.list().then(
-                    ports => {
-                        console.group('SerialPort list:')
-                        for (let port of ports) {
-                            if (port.vendorId) {
-                                console.log(port)
-                            }
-                        }
-                        console.groupEnd()
-                    },
-                    err => {
-                        console.error('SerialPort.list:\n', err)
-                    }
-                )
-            } catch (e) {
-                console.error('SerialPort.list()\n', e)
-            }
-        }
-    </script>
-
+    <script src="statics/load_native_modules.js" charset="utf-8" type="text/javascript"></script>
     <!-- DO NOT touch the following DIV -->
     <div id="q-app"></div>
 </body>
