@@ -134,14 +134,14 @@ module.exports = function (ctx) {
         },
 
         electron: {
-            // bundler: 'builder', // or 'packager'
+            bundler: 'builder', // or 'packager'
 
             extendWebpack (cfg) {
                 // do something with Electron main process Webpack cfg
                 // chainWebpack also available besides this extendWebpack
-                cfg.externals = {
-                    serialport: 'serialport'
-                }
+                // cfg.externals = {
+                //     serialport: 'serialport'
+                // }
             },
 
             packager: {
@@ -159,8 +159,21 @@ module.exports = function (ctx) {
 
             builder: {
                 // https://www.electron.build/configuration/configuration
+                // for now we use the defaults and will see what's happening..
+                // 'publish': ['github'],
+                // ^ should be automatically be the default if GH_TOKEN is set.
 
-                // appId: 'quasar-app'
+                // 'appId': 'eu.s-light.app.quasar.helloworld',
+                // 'copyright': 'Copyright © 2019 Stefan Krüger',
+                // 'productName': 'Quasar SerialPort Test',
+                'linux': {
+                    'category': 'Utility'
+                }
+                // },
+                // 'win': {
+                //     'legalTrademarks': 'Copyright © 2019 Stefan Krüger',
+                //     'publisherName': 'Stefan Krüger'
+                // }
             }
         }
     }

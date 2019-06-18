@@ -1,42 +1,45 @@
 {
-  "name": "quasar_serialport_test",
-  "version": "0.0.1",
-  "description": "minimal example & test for quasar in combination with electron and serialport",
-  "productName": "Quasar SerialPort Test",
-  "cordovaId": "eu.s-light.app.quasar_serialport_test",
-  "author": "Stefan Krüger (s-light git@s-light.eu)",
-  "private": true,
-  "scripts": {
-    "install": "electron-rebuild",
-    "lint": "eslint --ext .js,.vue src",
-    "test": "echo \"No test specified\" && exit 0"
-  },
-  "dependencies": {
-    "@quasar/extras": "^1.0.0",
-    "quasar": "^1.0.0-beta.0",
-    "electron-rebuild": "^1.8.5",
-    "serialport": "^7.1.5"
-  },
-  "devDependencies": {
-    "@quasar/app": "^1.0.0-beta.0",
-    "@quasar/quasar-app-extension-icon-factory": "^1.0.0-rc.4",
-    "@vue/eslint-config-standard": "^4.0.0",
-    "babel-eslint": "^10.0.1",
-    "devtron": "^1.4.0",
-    "electron": "^4.0.5",
-    "electron-debug": "^2.1.0",
-    "electron-devtools-installer": "^2.2.4",
-    "eslint": "^5.10.0",
-    "eslint-loader": "^2.1.1",
-    "eslint-plugin-vue": "^5.0.0",
-    "webpack": "^4.32.2"
-  },
-  "engines": {
-    "node": ">= 8.9.0",
-    "npm": ">= 5.6.0",
-    "yarn": ">= 1.6.0"
-  },
-  "browserslist": [
-    "last 1 version, not dead, ie >= 11"
-  ]
+    "name": "quasar_serialport_test",
+    "version": "0.3.0",
+    "description": "minimal example & test for quasar in combination with electron and serialport",
+    "productName": "Quasar SerialPort Test",
+    "cordovaId": "eu.s-light.app.quasar_serialport_test",
+    "author": "Stefan Krüger <git@s-light.eu> (http://s-light.eu)",
+    "license": "GPL-3.0-or-later OR AGPL-3.0-or-later",
+    "private": true,
+    "scripts": {
+        "build": "quasar build --mode electron --debug",
+        "release": "quasar build --mode electron --debug",
+        "postinstall": "electron-builder install-app-deps",
+        "lint": "eslint --ext .js,.vue src",
+        "test": "echo \"No test specified\" && exit 0"
+    },
+    "dependencies": {
+        "@quasar/extras": "^1.0.0",
+        "quasar": "^1.0.0-beta.0",
+        "serialport": "^7.1.5"
+    },
+    "devDependencies": {
+        "@quasar/app": "^1.0.0-beta.0",
+        "@quasar/quasar-app-extension-icon-factory": "^1.0.0-rc.4",
+        "@vue/eslint-config-standard": "^4.0.0",
+        "babel-eslint": "^10.0.1",
+        "devtron": "^1.4.0",
+        "electron": "^4.0.5",
+        "electron-builder": "^20.43.0",
+        "electron-debug": "^2.1.0",
+        "electron-devtools-installer": "^2.2.4",
+        "eslint": "^5.10.0",
+        "eslint-loader": "^2.1.1",
+        "eslint-plugin-vue": "^5.0.0",
+        "webpack": "^4.32.2"
+    },
+    "engines": {
+        "node": ">= 8.9.0",
+        "npm": ">= 5.6.0",
+        "yarn": ">= 1.6.0"
+    },
+    "browserslist": [
+        "last 1 version, not dead, ie >= 11"
+    ]
 }
