@@ -23,7 +23,7 @@
 </template>
 
 <script>
-
+/* eslint no-console: ["error", { allow: ["log", "group", "groupEnd", "warn", "error"] }] */
 export default {
     name: 'SerialList',
     data () {
