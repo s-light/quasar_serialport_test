@@ -21,38 +21,33 @@ module.exports = function (ctx) {
         ],
 
         framework: {
-            // all: true, // --- includes everything; for dev only!
+            iconSet: 'material-icons', // Quasar icon set
+            lang: 'en-us', // Quasar language pack
+            config: {
+                notify: {
+                    position: 'top'
+                },
+                // https://quasar.dev/quasar-plugins/dark#Through-quasar.conf.js
+                dark: 'auto' // or Boolean true/false
+            },
 
-            components: [
-                'QLayout',
-                'QHeader',
-                'QDrawer',
-                'QPageContainer',
-                'QPage',
-                'QToolbar',
-                'QToolbarTitle',
-                'QBtn',
-                'QIcon',
-                'QList',
-                'QItem',
-                'QItemSection',
-                'QItemLabel'
-            ],
+            // Possible values for "importStrategy":
+            // * 'auto' - (DEFAULT) Auto-import needed Quasar components & directives
+            // * 'all'  - Manually specify what to import
+            importStrategy: 'auto',
 
-            directives: [
-                'Ripple'
-            ],
+            // For special cases outside of where "auto" importStrategy can have an impact
+            // (like functional components as one of the examples),
+            // you can manually specify Quasar components/directives to be available everywhere:
+            //
+            // components: [],
+            // directives: [],
 
             // Quasar plugins
             plugins: [
                 'Notify'
             ]
-
-            // iconSet: 'ionicons-v4'
-            // lang: 'de' // Quasar language
         },
-
-        supportIE: false,
 
         build: {
             scopeHoisting: true,
@@ -100,27 +95,27 @@ module.exports = function (ctx) {
                 theme_color: '#027be3',
                 icons: [
                     {
-                        'src': 'statics/icons/icon-128x128.png',
+                        'src': 'icons/icon-128x128.png',
                         'sizes': '128x128',
                         'type': 'image/png'
                     },
                     {
-                        'src': 'statics/icons/icon-192x192.png',
+                        'src': 'icons/icon-192x192.png',
                         'sizes': '192x192',
                         'type': 'image/png'
                     },
                     {
-                        'src': 'statics/icons/icon-256x256.png',
+                        'src': 'icons/icon-256x256.png',
                         'sizes': '256x256',
                         'type': 'image/png'
                     },
                     {
-                        'src': 'statics/icons/icon-384x384.png',
+                        'src': 'icons/icon-384x384.png',
                         'sizes': '384x384',
                         'type': 'image/png'
                     },
                     {
-                        'src': 'statics/icons/icon-512x512.png',
+                        'src': 'icons/icon-512x512.png',
                         'sizes': '512x512',
                         'type': 'image/png'
                     }

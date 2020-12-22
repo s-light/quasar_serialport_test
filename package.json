@@ -3,8 +3,6 @@
     "version": "0.3.0",
     "description": "minimal example & test for quasar in combination with electron and serialport",
     "productName": "Quasar SerialPort Test",
-    "cordovaId": "eu.s-light.app.quasar_serialport_test",
-    "capacitorId": "eu.s-light.app.quasar_serialport_test",
     "author": "Stefan Krüger <git@s-light.eu> (http://s-light.eu)",
     "license": "GPL-3.0-or-later OR AGPL-3.0-or-later",
     "private": true,
@@ -17,11 +15,12 @@
     },
     "dependencies": {
         "@quasar/extras": "^1.9.12",
+        "core-js": "^3.0.0",
         "quasar": "^1.14.7",
         "serialport": "^8.0.8"
     },
     "devDependencies": {
-        "@quasar/app": "^1.9.6",
+        "@quasar/app": "^2.0.0",
         "@vue/eslint-config-standard": "^4.0.0",
         "babel-eslint": "^10.0.1",
         "devtron": "^1.4.0",
@@ -44,6 +43,14 @@
         "yarn": ">= 1.21.1"
     },
     "browserslist": [
-        "last 1 version, not dead, ie >= 11"
+      "last 10 Chrome versions",
+      "last 10 Firefox versions",
+      "last 4 Edge versions",
+      "last 7 Safari versions",
+      "last 8 Android versions",
+      "last 8 ChromeAndroid versions",
+      "last 8 FirefoxAndroid versions",
+      "last 5 iOS versions",
+      "last 3 Opera versions"
     ]
 }
