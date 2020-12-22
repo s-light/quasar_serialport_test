@@ -20,6 +20,8 @@ cd quasar_serialport_test/
 ```
 
 ### prepare needed packages
+outdated...
+
 ```bash
 yarn add webpack --dev
 quasar ext add @quasar/icon-factory
