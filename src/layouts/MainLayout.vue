@@ -12,10 +12,18 @@
         />
 
         <q-toolbar-title>
-          Quasar App
+          Serial Hello World
         </q-toolbar-title>
 
         <div>Quasar v{{ $q.version }}</div>
+        <div>
+            <!-- https://quasar.dev/options/platform-detection -->
+            &nbsp;
+            {{ $q.platform.is.platform }}
+            &nbsp;
+            {{ $q.platform.is.desktop ? 'desktop' : '' }}
+            {{ $q.platform.is.mobile ? 'mobile' : '' }}
+        </div>
       </q-toolbar>
     </q-header>
 
@@ -31,11 +39,26 @@
           Essential Links
         </q-item-label>
 
-        <EssentialLink
+        <!-- <EssentialLink
           v-for="link in essentialLinks"
           :key="link.title"
           v-bind="link"
-        />
+        /> -->
+        <q-item
+            clickable
+            v-ripple
+            to="Serial"
+            exact
+        >
+            <q-item-section avatar>
+                <q-icon name="developer_board" />
+            </q-item-section>
+            <q-item-section>
+                <q-item-label>
+                    Serial Tests
+                </q-item-label>
+            </q-item-section>
+        </q-item>
       </q-list>
     </q-drawer>
 
@@ -46,52 +69,6 @@
 </template>
 
 <script>
-import EssentialLink from 'components/EssentialLink.vue'
-
-const linksList = [
-  {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
-    title: 'Github',
-    caption: 'github.com/quasarframework',
-    icon: 'code',
-    link: 'https://github.com/quasarframework'
-  },
-  {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
-    icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
-  },
-  {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
-  },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
-];
 
 import { defineComponent, ref } from 'vue'
 
@@ -99,14 +76,14 @@ export default defineComponent({
   name: 'MainLayout',
 
   components: {
-    EssentialLink
+    // EssentialLink
   },
 
   setup () {
     const leftDrawerOpen = ref(false)
 
     return {
-      essentialLinks: linksList,
+      // essentialLinks: linksList,
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value

@@ -6,9 +6,11 @@
   "author": "s-light <git@s-light.eu>",
   "private": true,
   "scripts": {
+    "electron-reb": "electron-rebuild -f -w serialport",
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },
+  "install": "electron-rebuild",
   "dependencies": {
     "@quasar/extras": "^1.0.0",
     "core-js": "^3.6.5",
@@ -19,6 +21,7 @@
     "@babel/eslint-parser": "^7.13.14",
     "@quasar/app": "^3.0.0",
     "electron": "^16.0.1",
+    "electron-rebuild": "^3.2.5",
     "eslint": "^7.14.0",
     "eslint-config-prettier": "^8.1.0",
     "eslint-plugin-vue": "^7.0.0",

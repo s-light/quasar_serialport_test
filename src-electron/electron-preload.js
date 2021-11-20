@@ -15,3 +15,12 @@
  *     doAThing: () => {}
  *   })
  */
+
+// const SerialPort = require('serialport')
+
+//  const { contextBridge } = require('electron')
+//
+//
+//  contextBridge.exposeInMainWorld('serialport')
+
+// window.serialport = require("serialport");
