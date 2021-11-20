@@ -6,7 +6,7 @@
   "author": "s-light <git@s-light.eu>",
   "private": true,
   "scripts": {
-    "electron-reb": "electron-rebuild -f -w serialport",
+    "rebuild": "electron-rebuild -f -w serialport",
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },
@@ -42,5 +42,6 @@
     "node": ">= 12.22.1",
     "npm": ">= 6.13.4",
     "yarn": ">= 1.21.1"
-  }
+  },
+  "packageManager": "yarn@3.1.0"
 }
