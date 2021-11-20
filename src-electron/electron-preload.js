@@ -23,4 +23,4 @@
 //
 //  contextBridge.exposeInMainWorld('serialport')
 
-// window.serialport = require("serialport");
+window.myserialport = require("serialport");

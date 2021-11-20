@@ -26,12 +26,12 @@ function createWindow () {
         webPreferences: {
             // seems to be needed by serialport
             // https://serialport.io/docs/guide-installation#invoking-serialport-within-the-renderer-processes
-            contextIsolation: false,
-            nodeIntegration: true,
+            // contextIsolation: false,
+            // nodeIntegration: true,
             // only the above or below can be used...
             // More info: /quasar-cli/developing-electron-apps/electron-preload-script
-            // contextIsolation: true,
-            // preload: path.resolve(__dirname, process.env.QUASAR_ELECTRON_PRELOAD)
+            contextIsolation: true,
+            preload: path.resolve(__dirname, process.env.QUASAR_ELECTRON_PRELOAD)
         }
     })
 

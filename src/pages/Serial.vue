@@ -43,7 +43,7 @@ export default {
         listPorts () {
             console.group('listPorts()')
             console.log('SerialPort', SerialPort)
-            console.log('window.serialport', window.serialport)
+            console.log('window.myserialport', window.myserialport)
             if (SerialPort) {
                 try {
                     SerialPort.list().then(
