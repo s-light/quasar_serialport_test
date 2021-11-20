@@ -1,36 +1,35 @@
-# Quasar SerialPort Test
+# Quasar Serialport Test (quasar_serialport_test)
 
+just a simple serial port test
 
-
-## Usage
+## Usage / Install the dependencies
 ```bash
 git clone https://github.com/s-light/quasar_serialport_test.git
 yarn
 quasar dev --mode electron
 ```
 
-
----
-
-## History
+### Start the app in development mode (hot-code reloading, error reporting, etc.)
 ```bash
-git clone git@github.com:s-light/quasar_serialport_test.git
-quasar create quasar_serialport_test
-cd quasar_serialport_test/
+quasar dev
 ```
 
-### prepare needed packages
-outdated...
-
+### Lint the files
 ```bash
-yarn add webpack --dev
-quasar ext add @quasar/icon-factory
-yarn add electron-rebuild
+yarn run lint
+```
+
+### Build the app for production
+```bash
+quasar build
+```
+
+### Customize the configuration
+See [Configuring quasar.conf.js](https://quasar.dev/quasar-cli/quasar-conf-js).
+
+
+### reminders
+```bash
 yarn add serialport
 quasar dev --mode electron
-yarn
-# this triggers the rebuild
 ```
-
-### prepare content
-copied / modified files..
