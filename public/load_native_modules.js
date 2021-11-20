@@ -1,3 +1,7 @@
+// i do not remember what this file is for...
+// was in the old quasar v1 project tree....
+// maybe only a node test case?
+
 let SerialPort
 if (process.versions.electron) {
     // eslint-disable-next-line no-console

@@ -28,7 +28,7 @@
 // console.log('serialport:', serialport)
 // import SerialPort from 'serialport'
 
-const SerialPort = require('serialport')
+// const SerialPort = require('serialport')
 
 export default {
     name: 'SerialList',
@@ -70,6 +70,16 @@ export default {
         this.listPorts()
     }
 }
+
+// const SerialPort = require('serialport')
+// SerialPort.list().then(ports => {
+//     console.log("ports:", ports.length);
+//     ports.forEach(function(port) {
+//         if (port.manufacturer) {
+//             console.log(port);
+//         }
+//     });
+// });
 </script>
 
 <style lang="stylus">

@@ -6,7 +6,7 @@
   "author": "s-light <git@s-light.eu>",
   "private": true,
   "scripts": {
-    "rebuild": "electron-rebuild -f -w serialport",
+    "rebuild-e": "electron-rebuild -f -w serialport",
     "lint": "eslint --ext .js,.vue ./",
     "test": "echo \"No test specified\" && exit 0"
   },
