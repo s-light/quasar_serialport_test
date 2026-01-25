@@ -1,6 +1,9 @@
 # Quasar SerialPort Test
 
-
+> [!CAUTION]
+> you could try to generate a new up-to-date example based on this - 
+> but my last try for this failed.
+> so for now i archive it.
 
 ## Usage
 ```bash
